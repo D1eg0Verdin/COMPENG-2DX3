@@ -17,7 +17,8 @@ This repository showcases my work from **COMPENG 2DX3 (Microprocessor Systems)**
 - Project development from concept to prototype.  
 
 ## 🚀 Highlight: 3D Room Scanner  
-The final project involved creating a **3D room mapping device**. The system scanned and visualized a physical environment, demonstrating practical knowledge in:  
+The final project involved creating a **3D room mapping device**. The system scanned and visualized a physical environment, demonstrating practical knowledge in:
+- note main code files are datamapper.py and 2dx_studio-8c.c, the rest of the folder is the interface./  
 - Sensor integration (time-of-flight distance measurement).  
 - Stepper motor control for spatial mapping.  
 - Embedded software development for data acquisition and processing.  
