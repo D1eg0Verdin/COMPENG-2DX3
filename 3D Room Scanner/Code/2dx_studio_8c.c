@@ -1,27 +1,34 @@
 /*  
- * Time-of-Flight (ToF) Sensor Interface for COMPENG 2DX4 – Studio W8-0
+ * VL53L1X Time-of-Flight (ToF) Sensor & Stepper Motor Interface
+ * COMPENG 2DX4 – Studio W8-0
  *
- * This program demonstrates integration of the VL53L1X ToF distance sensor with the TM4C1294NCPDT
- * microcontroller. It configures the I²C bus, GPIO ports, and supporting peripherals to collect and 
- * transmit range measurements while controlling a stepper motor to perform angular scanning.
+ * This program interfaces the VL53L1X ToF distance sensor with the TM4C1294NCPDT
+ * microcontroller over I²C and uses a stepper motor to perform angular scanning.
+ * It collects range measurements at discrete angular positions, logs them over UART,
+ * and provides user control via onboard push buttons and LED indicators.
  *
- * Key Features:
- *  - Low-level I²C implementation based on the MSP432E4 Reference Manual (Chapter 19).
- *  - Integration of STMicroelectronics VL53L1X sensor via the Ultra Light Driver (pg. 19–21, VL53L1X datasheet).
- *  - Stepper motor control for rotating the sensor to collect 3D room mapping data.
- *  - User control through push buttons and LED feedback.
- *  - UART output for data logging.
+ * Features:
+ *  - I²C0 initialization and communication with VL53L1X sensor
+ *  - Sensor boot, configuration, and distance measurement acquisition
+ *  - Stepper motor control for rotating the sensor (direction + step count)
+ *  - Button-controlled toggling of data acquisition and motor rotation
+ *  - LED indicators for system heartbeat, acquisition status, and motor status
+ *  - UART output for real-time logging of (distance, angle) pairs
  *
- * Modification History:
- *  - Written by Tom Doyle (2020)
- *  - Updated by Hafez Mousavi Garmaroudi (2020–2022) – added I²C improvements and Keil IDE compatibility.
- *  - Modified by Diego Verdin (Mar 14, 2025) – adapted as a blueprint for final project implementation.
+ * Peripherals Used:
+ *  - I²C0 (PB2 = SCL, PB3 = SDA)
+ *  - UART for serial data logging
+ *  - GPIO (Ports J, F, N, E, M, G) for buttons, LEDs, motor driver, and sensor XSHUT
+ *  - SysTick timer for delays and stepper timing
  *
  * Demonstrated Skills:
- *  - Embedded C programming
- *  - Peripheral driver development (I²C, GPIO, UART, SysTick)
- *  - Sensor integration and motor control
- *  - Real-time system design for data acquisition
+ *  - Embedded C programming on TM4C1294NCPDT
+ *  - Peripheral driver setup and low-level register configuration
+ *  - Sensor integration with polling for data readiness
+ *  - Real-time motor control synchronized with data collection
+ *
+ * Author: Diego Verdin
+ * Last Modified: Mar 14, 2025
  */
 
 #include <stdint.h>
@@ -293,4 +300,5 @@ int main(void){
       GPIO_PORTF_DATA_R ^= 0x10;
     }
   }
+
 }
