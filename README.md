@@ -2,7 +2,7 @@
 
 This repository showcases my work from **COMPENG 2DX3 (Microprocessor Systems)**, where I developed skills in **embedded programming**, **hardware interfacing**, and **technical documentation**.  
 
-## 📂 Repository Contents  
+##  Repository Contents  
 - **Theme Reports** – Concise technical summaries of key course topics and labs.  
 - **Lab Work** – Hands-on experiments with microcontrollers and peripheral devices.  
 - **Final Project: 3D Room Scanner**  
@@ -10,13 +10,13 @@ This repository showcases my work from **COMPENG 2DX3 (Microprocessor Systems)**
   - Produced a **datasheet** to document device specifications.  
   - Authored a **comprehensive project report** detailing design decisions, implementation, and results.  
 
-## 💡 Skills Demonstrated  
+##  Skills Demonstrated  
 - Embedded C programming and low-level hardware control.  
 - System design and integration of sensors with microcontrollers.  
 - Technical writing through professional reports and documentation.  
 - Project development from concept to prototype.  
 
-## 🚀 Highlight: 3D Room Scanner  
+##  Highlight: 3D Room Scanner  
 The final project involved creating a **3D room mapping device**. The system scanned and visualized a physical environment, demonstrating practical knowledge in:
 - note main code files are datamapper.py and 2dx_studio-8c.c, the rest of the folder is the interface./  
 - Sensor integration (time-of-flight distance measurement).  
